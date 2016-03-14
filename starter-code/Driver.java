@@ -54,5 +54,19 @@ public class Driver {
 			double gpa = 3.5 * random.nextDouble() + 0.5;
 			outList.add(new Student(firstNames[firstNameIndex], lastNames[lastNameIndex], gpa));	
 		}
+
+	private static void deleteSmith() {
+		int n = studentLinkedList.getSize();
+		int index = 0;
+		Node<T> currentNode = studentLinkedList.get(index);
+		while (!currentNode.getData().equals("Smith")) {
+			currentNode = currentNode.getNext();
+			if (currentNode == null) {
+				return;
+			}
+			index++;
+		}
+		currentNode.remove(index);
+	}
 	}
 }
